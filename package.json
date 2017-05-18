@@ -10,6 +10,7 @@
     "cover": "cross-env BABEL_ENV=commonjs istanbul cover _mocha -- --compilers js:babel-register --recursive",
     "lint": "eslint src test",
     "build": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
+    "copy-package": "cp package.json lib/package.json",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
   },
   "files": [
