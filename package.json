@@ -1,6 +1,6 @@
 {
   "name": "json-compare",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Compare two json object for matching deep keys, also supports regular-expression.",
   "main": "./lib/index.js",
   "scripts": {
