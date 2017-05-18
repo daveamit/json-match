@@ -1,6 +1,6 @@
 {
   "name": "json-match",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "JSON object match",
   "main": "./lib/index.js",
   "scripts": {
