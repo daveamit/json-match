@@ -5,15 +5,15 @@ node_js:
 - '6.1'
 - '5.11'
 script:
-   - npm run lint
-   - npm run cover
-   - npm run build
+- npm run lint
+- npm run cover
+- npm run build
 after_success: npm run coveralls
 deploy:
   provider: npm
   email: daveamit@live.com
   api_key:
-    secure: eu2AvrFfWMaHcmpZrVgNEE9Bv/aLpXFGhVeYclBWYM7+PQY+7617OzDVfk7tczPcnf2T5URKXdfWt8IZcBDirR7BBHUhuxtQxW1TY2YJPIiW+bRjN+I3zgJDxce3IQ3K0hK97vgCJCkkZ4iuHqypLpLDTE/2/uRWO7DW5++3tbfySh1gBtvpAWrUOCfLQbhXAE5y/30XK/EHm8talFLkrcyx4Kid5WAuRHrOHrp1kA13eiJAJXbTYYhoC8KI8gietwNM6thWv5IjhFnthWFJWvxSnnPG0Xv8L5pzEfGN/K+1/VCBs2/1dUkv4jFNM5pnjT2MbRJZbXOFt09fVJLMWLWHCjz2v1xnPCootZe3BnNBSOupTG5Sd4GInv9GiEmp+K8xwsIKpv0SLjTqJ1v6kDz/mB5wZcne61nRaCqHpyOO04b/+yqt3lSg1rbCC+N7i9cFCxeoPRAp8d/xI4IXP9jBhPcbi25VeMg9FXlbXtepu8MCKcIhPoPR0bJVQFoTPnf7OTDhpi/hmk6/XOHToOLZSaZ3oxEK8QFM6a11yycXMdzl/z9WQVCStbkrp94wlz002Un+qBIC+/8yEp8PfuCc+rNNLLhSHtQtwtEs0WLTtUriiXuvhApfBx3oz7r0toJKt0kS+NPPRkRxuYdU6Lrg2i0VEujCKyf1i3zYXyQ=
+    secure: nrGGUJBBaGxwCqoj2sbJMU1QuQKfz5VvxY91nzhPMe0werTx4oLSmoJ8Eijnadi7Ld/nIsHolQ0KPiTvQqjFIiSUbztO4bY7mATqYO5h830tEhpsLqoRadwDFB29cesNoH4ZxigXQMQHZcRoqkRkz9t/Zdn3vhlDYx3YjsOwcx7RCqIG7rcFwrYldUjVNX9MF4oYJUbK/nLhlVyDqU8tVdzozPp0vdaUDWv3xYc/S89OxONJ/4qCpWfnPSZ/4aqd+B5v1OqMgHdOrsFEsfGpWro1XG7diBk9LWyg6OemSoZyV56pAanvpCtwSZ06oKlLs6+nhtia92Hqkb1f+MlR49su1FsklONXKWMCouXm/QxSAill6K8IzZ04R+H+yY2Qkwq2iWt8moZvoZC72QpD3sABzxqffOOBaCMU/BWDgQy1C9Zmar6UViLfveO/8XafLSvbxJq5PcBpz9/Up7MyK4sUTxAwy01pjySyfQDbbEuTQRRa80FVZvyazKNz7fnUU8bn1v2kkS54KRYui3Gl04Zmj5ErMOcyK7jW9hy8TZpN6EB7tJYw7o9dFsjStPK+mW+Ej84gZRrUW4LJVB2YBhHuBHnKwbcIO1taxEHaOBm0x4Ko+YpQYTa55vJ/ynmS4UPvfVYEcwFd36clyipUnOXn4z+5Wva1yEE07063i/k=
   on:
     tags: true
     repo: daveamit/json-match

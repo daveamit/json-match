@@ -1,7 +1,7 @@
 {
-  "name": "json-match",
+  "name": "json-compare",
   "version": "0.0.1",
-  "description": "JSON object match",
+  "description": "Compare two json object for matching deep keys, also supports regular-expression.",
   "main": "./lib/index.js",
   "scripts": {
     "clean": "rimraf lib",
