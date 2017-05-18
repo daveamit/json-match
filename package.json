@@ -14,10 +14,6 @@
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
     "dist": "npm run clean && npm run lint && npm run test && npm run build && cd lib && npm run copy-package && npm publish"
   },
-  "files": [
-    "lib",
-    "src"
-  ],
   "repository": {
     "type": "git",
     "url": "git@github.com:daveamit/json-match.git"
