@@ -12,25 +12,27 @@ npm install json-compare
 ```
 
 ```javascript
-   import compare from 'json-compare'
-   const source = {
+import compare from 'json-compare' // es6
+// OR
+const compare = require('json-compare') // good old es5
+
+const source = {
     name: "Dave Amit",
     hobby: {
         game: 'The Division'
     },
     country: 'India',
-   };
+};
 
-   const test = {
-       name: /[a-Z ]+/,
-       hobby: {
-           game: /Division/,
-       },
-       country: 'india',
-   };
+const test = {
+    name: /[a-zA-Z ]+/,
+    hobby: {
+        game: /Division/,
+    },
+    country: 'india',
+};
 
-   const result = compare(source, test);
-
+const result = compare(source, test);
    // Result will be something like:
 
    {
@@ -41,6 +43,6 @@ npm install json-compare
     mismatchCount: 0,
     unmatchedCount: 0,
     match: true,
-    isExactMatch: false, // Because fuzzyMatch
+    isExactMatch: false, // Because of fuzzyMatch
   }
 ```
