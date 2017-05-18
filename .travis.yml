@@ -9,6 +9,9 @@ script:
 - npm run cover
 - npm run build
 after_success: npm run coveralls
+after_deploy:
+- cp package.json lib/package.json
+- cd lib
 deploy:
   provider: npm
   email: daveamit@live.com
