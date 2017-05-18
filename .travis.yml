@@ -9,15 +9,10 @@ script:
 - npm run cover
 - npm run build
 after_success: npm run coveralls
-before_deploy:
-- npm run clean && npm run lint && npm run test && npm run build && npm run copy-package
-- cd lib
 deploy:
   skip_cleanup: true
-  provider: npm
-  email: daveamit@live.com
-  api_key:
-    secure: nrGGUJBBaGxwCqoj2sbJMU1QuQKfz5VvxY91nzhPMe0werTx4oLSmoJ8Eijnadi7Ld/nIsHolQ0KPiTvQqjFIiSUbztO4bY7mATqYO5h830tEhpsLqoRadwDFB29cesNoH4ZxigXQMQHZcRoqkRkz9t/Zdn3vhlDYx3YjsOwcx7RCqIG7rcFwrYldUjVNX9MF4oYJUbK/nLhlVyDqU8tVdzozPp0vdaUDWv3xYc/S89OxONJ/4qCpWfnPSZ/4aqd+B5v1OqMgHdOrsFEsfGpWro1XG7diBk9LWyg6OemSoZyV56pAanvpCtwSZ06oKlLs6+nhtia92Hqkb1f+MlR49su1FsklONXKWMCouXm/QxSAill6K8IzZ04R+H+yY2Qkwq2iWt8moZvoZC72QpD3sABzxqffOOBaCMU/BWDgQy1C9Zmar6UViLfveO/8XafLSvbxJq5PcBpz9/Up7MyK4sUTxAwy01pjySyfQDbbEuTQRRa80FVZvyazKNz7fnUU8bn1v2kkS54KRYui3Gl04Zmj5ErMOcyK7jW9hy8TZpN6EB7tJYw7o9dFsjStPK+mW+Ej84gZRrUW4LJVB2YBhHuBHnKwbcIO1taxEHaOBm0x4Ko+YpQYTa55vJ/ynmS4UPvfVYEcwFd36clyipUnOXn4z+5Wva1yEE07063i/k=
+  provider: script
+  script: printf "//`node -p \"require('url').parse(process.env.NPM_REGISTRY_URL || 'https://registry.npmjs.org').host\"`/:_authToken=${NPM_TOKEN}\nregistry=${NPM_REGISTRY_URL:-https://registry.npmjs.org}\n" >> ~/.npmrc && npm run clean && npm run lint && npm run test && npm run build && npm run copy-package && cd lib && npm publish
   on:
     tags: true
     repo: daveamit/json-match
