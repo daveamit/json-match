@@ -1,0 +1,2 @@
+printf "//`node -p \"require('url').parse(process.env.NPM_REGISTRY_URL || 'https://registry.npmjs.org').host\"`/:_authToken=${NPM_TOKEN}\nregistry=${NPM_REGISTRY_URL:-https://registry.npmjs.org}\n" >> ~/.npmrc
+npm run clean && npm run lint && npm run test && npm run build && npm run copy-package && cd lib && npm publish
