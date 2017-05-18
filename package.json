@@ -11,7 +11,8 @@
     "lint": "eslint src test",
     "build": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
     "copy-package": "cp -rf package.json lib && cd lib",
-    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
+    "dist": "npm run clean && npm run lint && npm run test && npm run build && cd lib && npm run copy-package && npm publish"
   },
   "files": [
     "lib",
