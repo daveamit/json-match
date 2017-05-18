@@ -9,7 +9,8 @@ script:
 - npm run cover
 - npm run build
 after_success: npm run coveralls
-after_deploy:
+before_deploy:
+- npm run clean && npm run lint && npm run test && npm run build
 - cp package.json lib/package.json
 - cd lib
 deploy:
